@@ -98,3 +98,11 @@ git checkout session-one
 # Apri in VS Code
 code .
 ```
+
+## 📚 Session One
+
+In this session, we will cover the following topics:
+
+- Quick review of ES6+ features (Arrow functions, Destructuring, Promises)
+- DOM vs React approach
+- Project Kickoff: Discuss Movie App features
