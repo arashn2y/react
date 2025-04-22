@@ -1,5 +1,3 @@
-import { colors, numbers, students } from "./../data.js";
-
 let result = [];
 
 // ================= Destructuring & Spread Operator =================
