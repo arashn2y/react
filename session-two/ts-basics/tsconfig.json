@@ -1,0 +1,12 @@
+{
+  "compilerOptions": {
+    "target": "ES6", // Output modern JS
+    "module": "commonjs", // Use CommonJS modules
+    "rootDir": "src", // Source files live in 'src'
+    "outDir": "dist", // Output files go into 'dist'
+    "strict": true, // Enable all strict type-checking options
+    "esModuleInterop": true, // Allow default imports from CommonJS
+    "noImplicitAny": true // Raise error on expressions and declarations with an implied 'any' type
+  },
+  "include": ["src"]
+}

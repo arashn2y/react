@@ -23,3 +23,13 @@ In this session, we will cover the following topics:
 - Quick review of ES6+ features (Arrow functions, Destructuring, Promises)
 - DOM vs React approach
 - Project Kickoff: Discuss Movie App features
+
+## 📚 Session Two
+
+- In this session, we will cover the following topics:
+
+- Why TypeScript?
+- Basic types: string, number, array, object
+- Interfaces vs Type Aliases
+- Defining Movie and User interfaces (basic structure)
+- Practice: convert JS files to TS
