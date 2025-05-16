@@ -99,10 +99,10 @@ git checkout session-one
 code .
 ```
 
-## 📚 Session One
+## 📚 Sessione Uno
 
-In this session, we will cover the following topics:
+In questa sessione tratteremo i seguenti argomenti:
 
-- Quick review of ES6+ features (Arrow functions, Destructuring, Promises)
-- DOM vs React approach
-- Project Kickoff: Discuss Movie App features
+- Breve ripasso delle funzionalità di ES6+ (funzioni freccia, destrutturazione, Promises)
+- Approccio DOM vs React
+- Avvio del progetto: discussione delle funzionalità dell’app Movie
