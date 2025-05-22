@@ -84,10 +84,10 @@ Se il comando `code` non funziona, potrebbe essere necessario installare Visual 
 git --version
 
 # Clona il repository
-git clone https://github.com/nome-utente/react-course.git
+git clone https://github.com/nome-utente/react.git
 
 # Entra nella cartella
-cd react-course
+cd react
 
 # Elenca i rami disponibili
 git branch -a
