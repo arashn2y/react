@@ -20,6 +20,8 @@ const add = (a, b) => {
   }
 };
 
+// const add = (a, b) =>  a + b;
+
 const addToEnd = (array, item) => {
   if (Array.isArray(array)) {
     return [...array, item];

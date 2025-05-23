@@ -20,8 +20,8 @@ function isUserLoggedIn(loginStatus) {
   // return loginStatus ? true : false;
 
   // 5. logical operators
-  // return loginStatus && true;
-  // return loginStatus || false;
+  // return loginStatus && admin;
+  // return loginStatus || hasSession;
 }
 
 // Test cases
