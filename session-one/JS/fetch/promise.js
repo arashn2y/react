@@ -1,3 +1,5 @@
+import { students } from "../data.js";
+
 // ✅ What is a Promise?
 // A Promise is a built-in object in JavaScript that represents the result of an asynchronous operation.
 // It can be in one of three states:
@@ -6,7 +8,7 @@
 // 3. rejected (failed)
 
 // 🔧 Custom callback to simulate async data (like a server)
-const callback = resolve => {
+const callback = (resolve, reject) => {
   setTimeout(() => {
     resolve({ status: 200, data: students });
   }, 3000);
@@ -14,7 +16,7 @@ const callback = resolve => {
 
 const firstResolvedPromise = new Promise(callback);
 
-// const secondResolvedPromise = new Promise((resolve) => {
+// const secondResolvedPromise = new Promise(resolve => {
 //   setTimeout(() => {
 //     resolve({ status: 200, data: randomNumbers });
 //   }, 1000);
@@ -28,8 +30,14 @@ const firstResolvedPromise = new Promise(callback);
 
 // ✅ .then() / .catch() / .finally()
 // firstResolvedPromise
-//   .then((result) => console.log("✅ First Resolved:", result))
-//   .catch((error) => console.log("❌ Error:", error))
+//   .then(result => {
+//     console.log("✅ First Resolved:", result);
+//     // id
+//     secondResolvedPromise
+//     .then()
+//     .catch();
+//   })
+//   .catch(error => console.log("❌ Error:", error))
 //   .finally(() => console.log("🔚 Closed firstResolvedPromise connection\n"));
 
 // ✅ Async/Await version
@@ -39,11 +47,9 @@ const fetchData = async () => {
     console.log("✅ Async/Await:", response);
   } catch (error) {
     console.log("❌ Async/Await Error:", error);
-  } finally {
-    console.log("🔚 Closed async/await connection\n");
   }
 };
-// fetchData(); // Uncomment to test async/await
+fetchData(); // Uncomment to test async/await
 
 // ✅ Rejected Promise
 // rejectedPromise

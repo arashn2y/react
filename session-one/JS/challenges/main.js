@@ -31,9 +31,7 @@
 // isValidPassword(password, username);
 // <----------3---------->
 
-
 // <----------4---------->
-// use the data from this api: 'https://jsonplaceholder.typicode.com/users'
 //A pangram is a sentence that contains every letter of the alphabet, like:
 //"The quick brown fox jumps over the lazy dog"
 

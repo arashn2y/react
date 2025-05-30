@@ -1,24 +1,19 @@
 const fetchData = () => {
   const url = "https://dummyjson.com/products";
   const promise = fetch(url);
-  console.log(promise);
-  const jsonPromise = promise.then(response => {
-    console.log(promise);
-    return response.json();
-  });
-  console.log(jsonPromise);
-  jsonPromise
-    .then(data => {
-      console.log(data);
+  promise
+    .then(response => {
+      console.log(promise);
+      const parsedResponse = response.json();
+      parsedResponse.then(data => console.log(data.products)).catch(error => console.log(error));
     })
-    .catch(error => {
-      console.log(jsonPromise);
-      console.log(error);
-    });
+    .catch(error => console.log(error));
 };
 
 const productDiv = document.getElementById("product");
-const title = document.getElementById("title");
+const h1 = document.getElementById("title");
+
+// console.log(document.body);
 
 const AsyncFetchData = async () => {
   const url = "https://dummyjson.com/products";
@@ -26,22 +21,25 @@ const AsyncFetchData = async () => {
     const response = await fetch(url);
     console.log(response);
     const data = await response.json();
-    console.log(data);
+    console.log(data.limit);
   } catch (error) {
     console.log(error);
   }
 };
 
 const FetchDataOfFirstProduct = async () => {
-  const url = "https://dummyjson.com/products/1";
+  const url = "https://dummyjson.com/products/10";
   try {
     const response = await fetch(url);
     console.log(response);
     const data = await response.json();
-    title.textContent = data.title;
-    data.images.forEach(image => {
+    console.log(data);
+    const { title, images } = data;
+    h1.textContent = title;
+    images.forEach(image => {
       const img = document.createElement("img");
       img.src = image;
+      img.alt = title;
       productDiv.appendChild(img);
     });
   } catch (error) {
@@ -60,8 +58,8 @@ const createProduct = async product => {
       "Content-Type": "application/json"
     }
   });
-  const status = response.status;
-  if (status === 200) {
+  const { status } = response;
+  if (status === 201) {
     const data = await response.json();
     console.log(data);
   } else {
@@ -70,6 +68,8 @@ const createProduct = async product => {
 };
 
 const updateProduct = async (id, product) => {
+  "";
+  "https://dummyjson.com/products/" + id;
   const url = `https://dummyjson.com/products/${id}`;
   const response = await fetch(url, {
     method: "PUT",
@@ -102,6 +102,6 @@ const deleteProduct = async id => {
 
 // fetchData();
 // AsyncFetchData();
-// createProduct({ name: 'test', price: 100 });
-// updateProduct(1, { name: 'test', title: 'Iphone 14' ,price: 1000000 });
+createProduct({ title: "test", price: 100 });
+updateProduct(1, { name: "test", title: "Iphone 14", price: 1000000 });
 // deleteProduct(1);
