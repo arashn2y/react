@@ -12,7 +12,7 @@
 // | Array
 
 let userName = "John Doe";
-// userName = 23; // Error: Type 'number' is not assignable to type 'string'
+//userName = 23; // Error: Type 'number' is not assignable to type 'string'
 
 let age = 30;
 // age = "thirty"; // Error: Type 'string' is not assignable to type 'number'
@@ -25,10 +25,11 @@ let userId = Symbol("userId");
 
 //  undefined vs null
 let undefinedValue: undefined = undefined;
-// undefinedValue = null; // Error: Type 'null' is not assignable to type 'undefined'
+let firstName: string;
+//undefinedValue = null; // Error: Type 'null' is not assignable to type 'undefined'
 
 let nullValue: null = null;
-// nullValue = undefined; // Error: Type 'undefined' is not assignable to type 'null'
+//nullValue = undefined; // Error: Type 'undefined' is not assignable to type 'null'
 
 // try to remove null and undefined as types
 
@@ -39,9 +40,10 @@ let userAddress = {
   street: "123 Main St",
   city: "New York",
   state: "NY",
-  zip: "10001"
+  zip: 10001
 };
 
+userAddress.zip = 10036;
 // userAddress.street = 456; // Error: Type 'number' is not assignable to type 'string'
 
 // Why not use any?
@@ -55,7 +57,9 @@ anyValue = { name: "John Doe" };
 
 // Why use unknown instead of any?
 let unknownValue: unknown = "Hello, World!";
-// unknownValue.toUpperCase(); // Error: Object is of type 'unknown'
+if (typeof unknownValue === "string") {
+  unknownValue.toUpperCase();
+}
 unknownValue = 42; // No error
 unknownValue = true; // No error
 unknownValue = ["Hello", "World"]; // No error
@@ -63,5 +67,5 @@ unknownValue = { name: "John Doe" }; // No error
 
 // union types
 let ID: string | number = "12345";
-// ID = 12345; // No error
+ID = 12345; // No error
 // ID = true; // Error: Type 'boolean' is not assignable to type 'string | number'

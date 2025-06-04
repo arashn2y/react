@@ -8,6 +8,7 @@ interface Movie {
   title: string;
   year: number;
   genres: string[];
+  publisher?: string;
 }
 
 interface MovieWithRating extends Movie {
@@ -26,3 +27,5 @@ type MovieType = {
 
 // Example of union types
 type ID = string | number;
+
+let id: ID = "123";
